@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            align-items: center;
+            justify-content: content;
+        }
+        .container{
+            width: 70vw;
+            height: 43vh;
+            align-items: center;
+            justify-content: center;
+            margin:auto;
+        }
+        input {
+            margin: 74px 12px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- -different between float and double
+what is modulus used for? -->
+<div style="text-align: center;">
+    <h1  style="text-align: center; font-size: 34px;">Grading system</h1>
+    <div class="container" style="border: 2px solid rgb(42, 1, 1);" class="d-grid">
+        <input type="text" style="padding: 15px 0px; background-color:antiquewhite;" id="cour1" value="" placeholder="Enter your course" >
+        <input type="number" style="padding: 15px 0px; background-color:antiquewhite;" placeholder="Enter your score" id="numb1" value="">
+        <button type="submit" style="margin-top: 13px; background-color:red; padding: 13px 33px;color: white; border: none;" onclick="check()" id="button">check</button>
+   </div>
+   <div>
+       <h1  id="show"></h1>
+   </div>
+</div>
+<script>
+    function check(){
+    var score = numb1.value
+    var cc = cour1.value
+        if(score>=0 && score<=39){
+            show.innerText =  "Student course in " + ''  + cc + " and scored " + "F" 
+            show.innerText.style.color = "Red";
+        }else if(score>=40 && score<=44){
+            show.innerText =  "Student course in " + ''  + cc + " and scored " + "E"
+            show.innerText.style.color = "black" 
+        }else if(score>=45 && score<=49 ){
+            show.innerText =  "Student course in " + ''  + cc + " and scored " + "D"
+            show.innerText.style.color = "yellow"  
+        }else if(score>=50 && score<=59){
+            show.innerText =  "Student course in " + ''  + cc + " and scored " + "C"
+            show.innerText.style.color = "blue" 
+        }else if (score>=60 && score<=69){
+            show.innerText =  "Student course in " + ''  + cc + " and scored " + "B" 
+            show.innerText.style.color = "violet";
+        }else if(score>=70 && score<=100){
+            show.innerText =  "Student course in " + ''  + cc + " and scored " + "A"
+            show.innerText.style.color = "green" 
+        }
+        else if( score <=-1){
+            alert("it's not possible");
+        }
+       
+        }
+</script>
+</body>
+</html>
