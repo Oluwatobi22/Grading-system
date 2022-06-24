@@ -5,20 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.css">
     <style>
         body {
             align-items: center;
             justify-content: content;
         }
         .container{
-            width: 70vw;
-            height: 43vh;
             align-items: center;
             justify-content: center;
             margin:auto;
+            width: 45%;
         }
         input {
             margin: 74px 12px;
+        }
+        .form-control ::placeholder{
+            color: black;
         }
     </style>
 </head>
@@ -29,9 +32,13 @@ what is modulus used for? -->
 <div style="text-align: center;">
     <h1  style="text-align: center; font-size: 34px;">Grading system</h1>
     <div class="container" style="border: 2px solid rgb(42, 1, 1);" class="d-grid">
-        <input type="text" style="padding: 15px 0px; background-color:antiquewhite;" id="cour1" value="" placeholder="Enter your course" >
-        <input type="number" style="padding: 15px 0px; background-color:antiquewhite;" placeholder="Enter your score" id="numb1" value="">
-        <button type="submit" style="margin-top: 13px; background-color:red; padding: 13px 33px;color: white; border: none;" onclick="check()" id="button">check</button>
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <input type="text" class="form-control form-control-sm" style="padding: 15px 0px; background-color:white;" id="cour1" value="" placeholder="Enter your course" >
+                <input type="number" class="form-control"  style="padding: 15px 0px; background-color:white;" placeholder="Enter your score" id="numb1" value="">
+                <button type="submit" style="margin-top: 13px; margin-bottom: 23px; background-color:red; padding: 13px 33px;color: white; border: none;" onclick="check()" id="button">check</button>
+            </div>
+        </div>
    </div>
    <div>
        <h1  id="show"></h1>
@@ -41,30 +48,30 @@ what is modulus used for? -->
     function check(){
     var score = numb1.value
     var cc = cour1.value
-        if(score>=0 && score<=39){
-            show.innerText =  "Student course in " + ''  + cc + " and scored " + "F" 
-            show.innerText.style.color = "Red";
+    
+    if(score>=0 && score<=39){
+        show.innerHTML =  "Student course in " + ''  + cc + " and scored " + "F"; 
+        show.innerHTML.style.color = "red" 
         }else if(score>=40 && score<=44){
-            show.innerText =  "Student course in " + ''  + cc + " and scored " + "E"
-            show.innerText.style.color = "black" 
+            show.innerHTML =  "Student course in " + ''  + cc + " and scored " + "E"
+            show.innerHTML.style.color = "black" 
         }else if(score>=45 && score<=49 ){
-            show.innerText =  "Student course in " + ''  + cc + " and scored " + "D"
-            show.innerText.style.color = "yellow"  
+            show.innerHTML =  "Student course in " + ''  + cc + " and scored " + "D"
+            show.innerHTML.style.color = "yellow"  
         }else if(score>=50 && score<=59){
-            show.innerText =  "Student course in " + ''  + cc + " and scored " + "C"
-            show.innerText.style.color = "blue" 
+            show.innerHTML =  "Student course in " + ''  + cc + " and scored " + "C"
+            show.innerHTML.style.color = "blue" 
         }else if (score>=60 && score<=69){
-            show.innerText =  "Student course in " + ''  + cc + " and scored " + "B" 
-            show.innerText.style.color = "violet";
+            show.innerHTML =  "Student course in " + ''  + cc + " and scored " + "B" 
+            show.innerHTML.style.color = "violet";
         }else if(score>=70 && score<=100){
-            show.innerText =  "Student course in " + ''  + cc + " and scored " + "A"
-            show.innerText.style.color = "green" 
+            show.innerHTML =  "Student course in " + ''  + cc + " and scored " + "A"
+            show.innerHTML.style.color = "green" 
         }
         else if( score <=-1){
-            alert("it's not possible");
+            alert("it's not allowed");
         }
-       
-        }
+    }
 </script>
 </body>
 </html>
